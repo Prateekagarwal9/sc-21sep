@@ -57,7 +57,7 @@ try:
 			    json.dump(list_json[i], fp)
 
 		try:
-			os.system("bash {}/SupplyChain/databricks_linux/main.sh {} {} {}".format(BASE_DIR,databricks_instance, databricks_token, BASE_DIR))
+			subprocess.call(['main.bat',databricks_instance,databricks_token])
 		
 		except Exception as e:
 			print("Error in executing main shell script!!", e)

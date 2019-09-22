@@ -16,7 +16,7 @@ from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.storage import StorageManagementClient
 from azure.mgmt.storage.models import StorageAccountCreateParameters
 import logging
-from .databricks_linux import databricks
+from .databricks_windows import databricks
 import threading
 
 
@@ -327,7 +327,7 @@ class SupplyChain(APIView):
                     databricksToken = vault_dict['parameters']['DataBricksToken']['value']
                     databricksScope = vault_dict['parameters']['DataBricksScope']['value']
                     databricksURL = vault_dict['parameters']['DataBricksWorkspaceURL']['value']
-                    # databricks.main(databricksURL, databricksToken, databricksScope)
+                    databricks.main(databricksURL, databricksToken, databricksScope)
                 except Exception as e:
                     logger.error('exception in databricks function: '+str(e))
                 try:
