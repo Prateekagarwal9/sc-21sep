@@ -5,7 +5,7 @@ import subprocess
 import logging
 import os
 logger = logging.getLogger(__name__)
-logger.error(BASE_DIR)
+
 
 list_json=["arima","prophet","holtwinter","lstm","xgboost","operational_research","os","timefence"]
 
