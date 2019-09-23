@@ -1,11 +1,11 @@
 ECHO OFF
+git clone https://github.com/Prateekagarwal9/supplychain-new
 python -m pip install --upgrade pip --user
 python -m pip install databricks-cli --user
 python -m pip install pexpect --user
 cp d:/local/appdata/python/python36/scripts/databricks.exe .
 cp d:/local/appdata/python/python36/scripts/databricks-script.py .
 cp d:/local/appdata/python/python36/scripts/dbfs.exe .
-git clone https://github.com/Prateekagarwal9/supplychain-new
 python expect.py %1 %2
 databricks workspace delete -r /Supply-Chain-Solution
 databricks workspace import  -f DBC -l SCALA supplychain-new/Supply-Chain-Solution.dbc /Supply-Chain-Solution
