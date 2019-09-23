@@ -43,3 +43,11 @@ databricks jobs create --json-file or.json > runid.json
 jq-win64.exe ".job_id" runid.json > jobid.txt
 set /p jobid= < jobid.txt
 databricks jobs run-now --job-id %jobid%
+databricks jobs create --json-file os.json > runid.json
+jq-win64.exe ".job_id" runid.json > jobid.txt
+set /p jobid= < jobid.txt
+databricks jobs run-now --job-id %jobid%
+databricks jobs create --json-file timefence.json > runid.json
+jq-win64.exe ".job_id" runid.json > jobid.txt
+set /p jobid= < jobid.txt
+databricks jobs run-now --job-id %jobid%
