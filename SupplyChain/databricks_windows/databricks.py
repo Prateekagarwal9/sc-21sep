@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 list_json=["arima","prophet","holtwinter","lstm","xgboost","operational_research","os","timefence"]
 
-scripts=["/arima_installation.sh","/prophet_installation.sh","/holtwinter_installation.sh","/lstm_installation.sh","/xgboost_installation.sh","/or_installation.sh","/or_installation.sh","/or_installation.sh"]
+scripts=["arima_installation.sh","prophet_installation.sh","holtwinter_installation.sh","lstm_installation.sh","xgboost_installation.sh","or_installation.sh","or_installation.sh","or_installation.sh"]
 
 notebooks=["1. Inventory Optimization and Sales Forecasting - ARIMA","2. Demand Forecasting - Prophet","3. Sales Forecasting - Holt Winter","4. LSTM + RNN - Demand and Sales Forecasting","5. Sales & Demand Forecasting - XgBoost","6. Operational Research","7. Opportunity Scoring","8. Time fence"]
 
