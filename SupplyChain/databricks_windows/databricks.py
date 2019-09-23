@@ -2,7 +2,6 @@
 import json
 #To execute the main shell script (main.sh)
 import subprocess
-from AzureSite.settings import BASE_DIR
 import logging
 import os
 logger = logging.getLogger(__name__)
@@ -52,7 +51,7 @@ try:
 
 		#Dumping the json into respective files
 		for i in range(length_notebooks):
-			path=BASE_DIR+"/SupplyChain/databricks_linux/"+jsons[i]
+			path="d:/home/site/wwwroot/SupplyChain/databricks_windows/"+jsons[i]
 			with open(path, 'w') as fp:
 			    json.dump(list_json[i], fp)
 
