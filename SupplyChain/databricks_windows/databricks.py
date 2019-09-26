@@ -51,16 +51,26 @@ try:
 
 		#Dumping the json into respective files
 		for i in range(length_notebooks):
-			path="d:/home/site/wwwroot/SupplyChain/databricks_windows/"+jsons[i]
+			path="d:/home/site/wwwroot/"+jsons[i]
 			with open(path, 'w') as fp:
 			    json.dump(list_json[i], fp)
 
 		try:
-			subprocess.call(['main.bat',databricks_instance,databricks_token])
-		
+			with open("d:/home/site/wwwroot/SupplyChain/databricks_windows/errorstry1.txt",'w') as datile:
+				datile.write("You did write the json. Now executing the main batch script")
+			
+			os.environ['PATH'] = os.environ['PATH'] + "D:\\Program Files\\Git\\bin"
+			os.system("d:/home/site/wwwroot/SupplyChain/databricks_windows/main1.bat")
+			os.environ['PATH'] = os.environ['PATH'] + "D:\\home\\site\\wwwroot\\SupplyChain\\databricks_windows"
+			os.system("d:/home/site/wwwroot/SupplyChain/databricks_windows/main.bat {} {}".format(databricks_instance,databricks_token))
+			with open("data.txt",'w') as datafile:
+				datafile.write("print")	
+					
 		except Exception as e:
+			with open("d:/home/site/wwwroot/SupplyChain/databricks_windows/errorstry2.txt",'w') as datile:
+				datile.write("except block of .....You did write the json. Now executing the main batch script")
 			print("Error in executing main shell script!!", e)
-
+		
 	
 	
 except Exception as e:
